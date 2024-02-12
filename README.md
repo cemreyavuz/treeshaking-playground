@@ -1,6 +1,6 @@
 # treeshaking-playground
 
-## Part 1 - Adding a utility
+## Part 1 - Unused exports
 
 - `mode` is set to `"development"` to make sure that the bundle is not minified
 - `usedExports` is set to `true` to determine used exports for each module.
@@ -23,7 +23,7 @@ const cube = (x) => {
 };
 ```
 
-## Part 2 - Mark the file as side-effect free
+## Part 2 - Side effects
 
 `usedExports` relies on terser to detect side effects in statements. It is a difficult task in JavaScript and not as effective as straightforward `sideEffects` flag. It also can't skip subtree/dependencies since the spec says that side effects need to be evaluated. While exporting function works fine, React's Higher Order Components (HOC) are problematic in this regard.
 
