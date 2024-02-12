@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:part-1:app": "yarn clean:part-1:app && webpack -c part-1/app/webpack.config.js -o part-1/app/dist",
+    "clean:part-1:app": "rm -rf part-1/app/dist"
   },
   "author": "",
   "license": "ISC",
