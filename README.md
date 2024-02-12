@@ -10,6 +10,7 @@
 We didn't import the `square` method from `math.js`. That function is what's known as "dead code", meaning an unused `export` that should be dropped.
 
 ```js
+// bundle.js
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   cube: () => (/* binding */ cube)
 /* harmony export */ });
@@ -30,6 +31,7 @@ const cube = (x) => {
 In this example, we import `VoidVariable` from `util.js` but we don't actually use it. However, unlike `square` function in the previous example, it's not tree shaken this time. The lines with `"foo"` and `"bar"` are coming from `util.js`.
 
 ```js
+// bundle.js
 (() => {
   "use strict";
   var e;
@@ -52,16 +54,7 @@ const VoidVariable = /*#__PURE__*/ noSideEffectWrapper({});
 })();
 ```
 
-It is a working solution, but it's not so easy to add this annotation to everywhere. That's where `sideEffects` property comes in play. Using `sideEffects`, we can set these hints at module level directly.
-
-```json
-{
-  "name": "your-project",
-  "sideEffects": false
-}
-```
-
-In a 100% ESM module world, identifying side effects is straightforward. However, we're not there quite yet, so in the mean time it's necessary to provide hints to webpack's compiler on the "pureness" of your code. The way this is accomplished is the `sideEffects` `package.json` property.
+It is a working solution, but it's not so easy to add this annotation to everywhere. That's where `sideEffects` `package.json` property comes in play. Using `sideEffects`, we can set these hints at module level directly.
 
 ```json
 {
