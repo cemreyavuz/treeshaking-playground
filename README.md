@@ -123,3 +123,9 @@ document.body.innerHTML = [
 ## Part 4 - Preserving module structure
 
 `preserveModules` is a configuration option provided by rollup. When we set this to `true`, instead of having our whole bundle in one file, we keep having modules in separate files - which helps tree-shaking in the end. It's also important for using `sideEffects` `package.json` property. With one file, you can only set `sideEffects` property for your whole bundle.
+
+## Part 5 - External dependencies
+
+External dependencies are dependencies that are not included in our bundle. Instead of bundling these dependencies along with our code, bundlers don’t resolve the imports for those dependencies and leave them as they are. The main benefit of this is having a much smaller bundle since we leave out a lot of code from our bundle. And it also helps the build time because we compile less code.
+
+For libraries that are supposed to be used in front-end application, we don’t want to include any dependencies in the final bundle almost any time. Since we set dependency versions in package.json, application using our package install those and resolve the references. The amount of code we compile while bundling our “applications” is not affected by this because the same imports and the same code will be read by the application bundler in both cases (setting dependencies external vs not). By setting dependencies external, we stop duplicating the compilation for those dependencies while bundling libraries.

@@ -1,0 +1,17 @@
+{
+  "name": "my-awesome-app-for-part-5",
+  "version": "0.0.0",
+  "description": "",
+  "module": "dist/bundle.js",
+  "scripts": {
+    "build": "yarn clean && webpack -c ./webpack.config.js -o ./dist",
+    "clean": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "my-awesome-library-for-part-5": "file:.yalc/my-awesome-library-for-part-5"
+  }
+}
