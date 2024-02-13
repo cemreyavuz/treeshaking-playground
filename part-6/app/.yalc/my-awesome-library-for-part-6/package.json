@@ -1,0 +1,20 @@
+{
+  "name": "my-awesome-library-for-part-6",
+  "version": "0.0.0",
+  "description": "",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "yarn clean && rollup -c ./rollup.config.js",
+    "clean": "rm -rf ./dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "yalcSig": "afaf700f7e28a9365445975253f1e79a"
+}

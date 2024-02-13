@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "packages": {
+    "my-awesome-library-for-part-5": {
+      "signature": "e8dd19ea0540638bbe2b57050aceffcd",
+      "file": true
+    },
+    "my-awesome-library-for-part-6": {
+      "signature": "afaf700f7e28a9365445975253f1e79a",
+      "file": true
+    }
+  }
+}

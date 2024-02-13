@@ -1,0 +1,19 @@
+{
+  "name": "my-awesome-library-for-part-5",
+  "version": "0.0.0",
+  "description": "",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "yarn clean && rollup -c ./rollup.config.js",
+    "clean": "rm -rf ./dist"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "yalcSig": "e8dd19ea0540638bbe2b57050aceffcd"
+}
