@@ -6,8 +6,12 @@
   "scripts": {
     "build:part-1:app": "yarn clean:part-1:app && webpack -c part-1/app/webpack.config.js -o part-1/app/dist",
     "build:part-2:app": "yarn clean:part-2:app && webpack -c part-2/app/webpack.config.js -o part-2/app/dist",
+    "build:part-3:app": "yarn clean:part-3:app && webpack -c part-3/app/webpack.config.js -o part-3/app/dist",
+    "build:part-3:lib": "yarn clean:part-3:lib && rollup -c part-3/lib/rollup.config.js",
     "clean:part-1:app": "rm -rf part-1/app/dist",
-    "clean:part-2:app": "rm -rf part-2/app/dist"
+    "clean:part-2:app": "rm -rf part-2/app/dist",
+    "clean:part-3:app": "rm -rf part-3/app/dist",
+    "clean:part-3:lib": "rm -rf part-3/lib/dist"
   },
   "author": "",
   "license": "ISC",

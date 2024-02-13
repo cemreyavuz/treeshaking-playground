@@ -75,3 +75,47 @@ If your code did have some side effects though, an array can be provided instead
 The `sideEffects` and `usedExports` (more known as tree shaking) optimizations are two different things.
 
 `sideEffects` is much more effective since it allows to skip whole modules/files and the complete subtree.
+
+# Part 3 - ESM vs CJS
+
+ESM (ESModules) and CJS (CommonJS) are two different ways of writing modules. CJS can be recognized by the use of `require()` and `module.exports` while ESM uses `import` and `export` statements for similar (though not identical) functionality. The main difference between two is that while CJS `require` is dynamic, ESM `import` is static. That has several benefits but the one we care about is that it is easier to analyze ESM `import` during compile-time. In many cases, while ESM bundles can be tree-shaken, CJS bundles are not.
+
+For example, this example cannot be tree-shaken if you have CJS bundle for your library (notice the reference to `square` function in `bundle.js`):
+
+```js
+// index.js (library)
+const square = (x) => {
+  return x * x;
+};
+
+const cube = (x) => {
+  return x * x * x;
+};
+
+export default {
+  square,
+  cube,
+};
+
+// index.js (app)
+
+import { cube } from "../lib/dist/bundle-cjs";
+
+document.body.innerHTML = [
+  "Hello webpack!",
+  "5 cubed is equal to " + cube(5),
+].join("\n\n");
+
+// bundle.js
+(() => {
+  "use strict";
+  var e,
+    r,
+    o = {
+      288: (e) => {
+        e.exports = { square: (e) => e * e, cube: (e) => e * e * e };
+      },
+    },
+    t = {};
+...
+```
