@@ -76,7 +76,7 @@ The `sideEffects` and `usedExports` (more known as tree shaking) optimizations a
 
 `sideEffects` is much more effective since it allows to skip whole modules/files and the complete subtree.
 
-# Part 3 - ESM vs CJS
+## Part 3 - ESM vs CJS
 
 ESM (ESModules) and CJS (CommonJS) are two different ways of writing modules. CJS can be recognized by the use of `require()` and `module.exports` while ESM uses `import` and `export` statements for similar (though not identical) functionality. The main difference between two is that while CJS `require` is dynamic, ESM `import` is static. That has several benefits but the one we care about is that it is easier to analyze ESM `import` during compile-time. In many cases, while ESM bundles can be tree-shaken, CJS bundles are not.
 
@@ -119,3 +119,7 @@ document.body.innerHTML = [
     t = {};
 ...
 ```
+
+## Part 4 - Preserving module structure
+
+`preserveModules` is a configuration option provided by rollup. When we set this to `true`, instead of having our whole bundle in one file, we keep having modules in separate files - which helps tree-shaking in the end. It's also important for using `sideEffects` `package.json` property. With one file, you can only set `sideEffects` property for your whole bundle.

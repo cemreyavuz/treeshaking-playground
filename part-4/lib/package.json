@@ -1,0 +1,20 @@
+{
+  "name": "my-awesome-library-for-part-4",
+  "version": "0.0.0",
+  "description": "",
+  "module": "dist/index.js",
+  "sideEffects": [
+    "**/math.js"
+  ],
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "yarn clean && rollup -c ./rollup.config.js",
+    "clean": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "rollup": "^4.10.0"
+  }
+}

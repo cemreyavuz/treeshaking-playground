@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "my-awesome-library-for-part-4": {
+      "signature": "ed88efa15507e40fd23a405f79e59c4b",
+      "file": true
+    }
+  }
+}

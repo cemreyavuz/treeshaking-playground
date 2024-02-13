@@ -1,0 +1,12 @@
+const path = require("path");
+
+module.exports = {
+  input: path.resolve(__dirname, "./index.js"),
+  output: [
+    {
+      dir: path.resolve(__dirname, "./dist"),
+      format: "esm",
+      preserveModules: true,
+    },
+  ],
+};
