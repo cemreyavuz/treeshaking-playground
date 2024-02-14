@@ -14,6 +14,4 @@ const initializeLibInstance = () => {
 
 initializeLibInstance();
 
-const getName = window.global.myAwesomeLibrary.getName;
-
-export { getName };
+export const getName = window.global.myAwesomeLibrary.getName;

@@ -1,17 +1,8 @@
-const initializeLibInstance = () => {
-  window.global.myAwesomeLibrary = {
-    talk: () => {
-      console.log("hello");
-    },
-    setName: (name) => {
-      window.global.myAwesomeLibraryName = name;
-    },
-    getName: () => {
-      return window.global.myAwesomeLibraryName;
-    },
-  };
+const noSideEffectWrapper = (arg) => {
+  arg.F = "foo";
+  arg.B = "bar";
 };
 
-initializeLibInstance();
+const VoidVariable = noSideEffectWrapper({});
 
-export const getName = window.global.myAwesomeLibrary.getName;
+export { VoidVariable };

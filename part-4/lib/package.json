@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "module": "dist/index.js",
-  "sideEffects": [
-    "**/math.js"
-  ],
   "files": [
     "dist",
     "package.json"

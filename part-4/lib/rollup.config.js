@@ -6,7 +6,7 @@ module.exports = {
     {
       dir: path.resolve(__dirname, "./dist"),
       format: "esm",
-      preserveModules: true,
+      preserveModules: false,
     },
   ],
 };

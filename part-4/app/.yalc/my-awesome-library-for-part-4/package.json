@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "",
   "module": "dist/index.js",
-  "sideEffects": [
-    "**/math.js"
-  ],
   "files": [
     "dist",
     "package.json"
@@ -14,5 +11,5 @@
     "build": "yarn clean && rollup -c ./rollup.config.js",
     "clean": "rm -rf ./dist"
   },
-  "yalcSig": "ed88efa15507e40fd23a405f79e59c4b"
+  "yalcSig": "da918d09366d1d1aff2161acd1be9a9b"
 }
